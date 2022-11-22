@@ -133,8 +133,6 @@ export default function EditTrip({navigation, route}){
                     />
                     <Text style={styles.checkboxText}>No</Text>
                 </View>
-                
-                
             </View>
 
             <Text style={styles.addtripText}>

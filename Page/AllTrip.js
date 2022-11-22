@@ -62,14 +62,7 @@ export default function AllTrip( {navigation} ){
         });
         return unsubscribe;
       }, [navigation]);
-
-    useEffect(() => {
-        // testTable()
-        
-    }, []);
     
-
-
     return(
         // <ScrollView>
             <View style={styles.container}>
@@ -80,11 +73,8 @@ export default function AllTrip( {navigation} ){
                             title="Delete all Trip"
                             onPress={deleteAllTrip}
                             color="#a00"
-                            
                         /> 
                     </View>
-                    
-                    
                 </View>
                 <FlatList 
                     data={tripArray} 
@@ -156,5 +146,4 @@ const styles = StyleSheet.create({
         width: 55,
         height: 55,
     }
-
 });

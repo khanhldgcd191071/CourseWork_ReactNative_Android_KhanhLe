@@ -4,7 +4,6 @@ import CheckBox from 'expo-checkbox';
 import { addTrip } from '../Database/DatabaseHelper';
 
 export default function AddTrip({navigation}){
-    
     const [inputName, setInputName] = useState("");
     const [inputDestination, setInputDestination] = useState("");
     const [inputDate, setInputDate] = useState("");
@@ -97,7 +96,6 @@ export default function AddTrip({navigation}){
                         disabled={false}
                         value={radioYes}
                         onValueChange={(e) => setRadioYes(e)}
-                        // onPress = {chooseYes}
                         style={styles.checkboxButton}
                     />
                     <Text style={styles.checkboxText}>Yes</Text>
@@ -108,13 +106,10 @@ export default function AddTrip({navigation}){
                         disabled={false}
                         value={radioNo}
                         onValueChange={(e) => setRadioNo(e)}
-                        // onPress = {chooseNo}
                         style={styles.checkboxButton}
                     />
                     <Text style={styles.checkboxText}>No</Text>
                 </View>
-                
-                
             </View>
 
             <Text style={styles.addtripText}>

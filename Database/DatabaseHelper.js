@@ -3,23 +3,6 @@ import { ToastAndroid } from "react-native";
 
 const db = SQLite.openDatabase('trip1.db')
 
-export const testTable = ()=>{
-    db.transaction((txn) => {
-        txn.executeSql("DROP TABLE IF EXISTS table_trips", []);
-        txn.executeSql(
-          "CREATE TABLE IF NOT EXISTS table_trips(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, destination TEXT, date TEXT, risk TEXT, description TEXT)",
-          []
-        );
-    
-        txn.executeSql(
-          "INSERT INTO table_trips (name, destination, date, risk, description) VALUES (?, ?, ?, ?, ?)",
-          ["Vietnam", "DN", "2/11/22", "Yes", "Go!"]
-        );
-       
-    });
-    
-    
-}
 export const createTable = ()=>{
     db.transaction((txn) => {
         txn.executeSql(
@@ -37,12 +20,10 @@ export const getTripTable = (setTripArray)=>{
               console.log("item:", res.rows.item(i));
               temp.push(res.rows.item(i));
               console.log("item:", temp);
-              
             }
             setTripArray(temp);
           });
     })
-    
 }
 export function addTrip(inputName, inputDestination, inputDate, inputRequire, inputDescription){
     db.transaction((tx) =>{
@@ -65,7 +46,7 @@ export function editTripData(trip_id, inputName, inputDestination, inputDate, in
           console.log("Results", results.rowsAffected);
           if (results.rowsAffected > 0) {
             Toast("Trip updated successfully");
-          } else Toast("Updation Failed");
+          } else Toast("Update Failed");
         }
       );
     });
